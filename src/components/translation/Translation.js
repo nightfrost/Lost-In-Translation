@@ -6,7 +6,7 @@ const Translation = () => {
     const [translatedInput, setTranslatedInput] = useState([]);
 
     const handleInputChange = (event) => {
-        setUserInput(event.target.value);
+        setUserInput(event.target.value.toLowerCase());
     };
 
     const translate = () => {
