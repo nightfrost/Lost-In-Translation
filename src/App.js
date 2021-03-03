@@ -8,18 +8,27 @@ import Navbar from "./components/shared/Navbar";
 const App = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
-    const update = () => {
-        setIsUserLoggedIn(true);
+    const update = (value) => {
+        setIsUserLoggedIn(value);
     };
 
     return (
         <BrowserRouter>
-            <Navbar />
+            <Navbar isUserLoggedIn={isUserLoggedIn} />
             <Switch>
-                <Route exact path="/" children={<Login userLogin={update} />} />
+                <Route
+                    exact
+                    path="/"
+                    children={<Login userLogin={(value) => update(value)} />}
+                />
 
                 {isUserLoggedIn && (
-                    <Route path="/profile" component={Profile} />
+                    <Route
+                        path="/profile"
+                        children={
+                            <Profile userLogin={(value) => update(value)} />
+                        }
+                    />
                 )}
 
                 {isUserLoggedIn && (

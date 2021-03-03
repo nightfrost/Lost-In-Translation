@@ -10,7 +10,7 @@ const Login = ({ userLogin }) => {
     };
 
     const handleLoginButton = () => {
-        userLogin();
+        userLogin(true);
         localStorage.setItem("user", JSON.stringify({ name: name }));
         history.push("/translation");
     };
