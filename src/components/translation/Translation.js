@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MOCK_IMAGES from "../../mocks/images.mock";
 
 const Translation = () => {
     const [userInput, setUserInput] = useState(null);
-    const [translatedInput, setTranslatedInput] = useState([]);
+    const [translatedUserInput, setTranslatedUserInput] = useState([]);
+    const [handSignMapping, setHandSignMapping] = useState();
+
+    useEffect(() => {
+        setHandSignMapping(MOCK_IMAGES);
+    }, []);
 
     const handleInputChange = (event) => {
         setUserInput(event.target.value.toLowerCase());
@@ -14,11 +19,14 @@ const Translation = () => {
 
         let translation = [];
         for (let letter of arr) {
-            let url = MOCK_IMAGES.find((element) => element.name === letter);
-            translation.push(url);
+            let letterMapping = handSignMapping.find(
+                (element) => element.name === letter
+            );
+            translation.push(letterMapping);
         }
 
-        setTranslatedInput(translation);
+        setTranslatedUserInput(translation);
+
         const user = localStorage.getItem("user");
 
         let translations = JSON.parse(user).translations;
@@ -40,8 +48,8 @@ const Translation = () => {
         );
     };
 
-    const handSign = translatedInput.map((url, index) => {
-        return <img key={index} src={url.url} alt="hand sign"></img>;
+    const handSignTranslation = translatedUserInput.map((sign, index) => {
+        return <img key={index} src={sign.url} alt="hand sign"></img>;
     });
 
     return (
@@ -54,7 +62,7 @@ const Translation = () => {
             <button type="button" onClick={translate}>
                 Translate
             </button>
-            <div>{handSign}</div>
+            <div>{handSignTranslation}</div>
         </div>
     );
 };
