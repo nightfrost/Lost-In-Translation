@@ -15,7 +15,23 @@ const Navbar = () => {
         );
     };
 
-    return <div>This is the navbar {user && greeting()}</div>;
+    const goToTranslation = () => {
+        return (
+            <span>
+                |
+                <span>
+                    {" "}
+                    <Link to="/translation">Translation</Link>
+                </span>
+            </span>
+        );
+    };
+
+    return (
+        <div>
+            This is the navbar {user && greeting()} {user && goToTranslation()}{" "}
+        </div>
+    );
 };
 
 export default Navbar;
