@@ -39,7 +39,7 @@ const Profile = ({ userLogin }) => {
                 translation.push(letterMapping);
             }
             return (
-                <div>
+                <div key={index}>
                     <div>{translationHistory[index]}</div>
                     {handSignTranslation(translation)}
                 </div>
