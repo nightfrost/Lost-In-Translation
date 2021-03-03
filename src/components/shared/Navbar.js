@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     const user = localStorage.getItem("user");
 
-    return (
-        <div>
-            This is the navbar.
-            <Link to="/profile">{user && JSON.parse(user).name}</Link>
-        </div>
-    );
+    const greeting = () => {
+        return (
+            <span>
+                | Hello,
+                <span>
+                    {" "}
+                    <Link to="/profile">{JSON.parse(user).name}</Link>
+                </span>
+            </span>
+        );
+    };
+
+    return <div>This is the navbar {user && greeting()}</div>;
 };
 
 export default Navbar;

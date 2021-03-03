@@ -33,7 +33,10 @@ const Translation = () => {
         translations.push(userInput);
         localStorage.setItem(
             "user",
-            JSON.stringify({ translations: translations })
+            JSON.stringify({
+                name: JSON.parse(user).name,
+                translations: translations,
+            })
         );
     };
 
@@ -45,7 +48,7 @@ const Translation = () => {
         <div>
             <input
                 type="text"
-                placeholder="TO be translated"
+                placeholder="To be translated..."
                 onChange={handleInputChange}
             ></input>
             <button type="button" onClick={translate}>
