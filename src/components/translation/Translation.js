@@ -26,7 +26,10 @@ const Translation = () => {
         }
 
         setTranslatedUserInput(translation);
+        updateLocalStorageTranslations();
+    };
 
+    const updateLocalStorageTranslations = () => {
         const user = localStorage.getItem("user");
 
         let translations = JSON.parse(user).translations;
