@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useState } from "react";
+import Login from "./components/login/Login";
+import Translation from "./components/translation/Translation";
+import Profile from "./components/profile/Profile";
+import Navbar from "./components/shared/Navbar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+    const update = () => {
+        setIsUserLoggedIn(true);
+    };
+
+    return (
+        <BrowserRouter>
+            <Navbar />
+            <Switch>
+                <Route exact path="/" children={<Login userLogin={update} />} />
+
+                {isUserLoggedIn && (
+                    <Route path="/profile" component={Profile} />
+                )}
+
+                {isUserLoggedIn && (
+                    <Route path="/translation" component={Translation} />
+                )}
+            </Switch>
+        </BrowserRouter>
+    );
+};
 
 export default App;
