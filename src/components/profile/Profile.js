@@ -30,7 +30,7 @@ const Profile = ({ userLogin }) => {
     };
 
     const translate = () => {
-        return translationHistory.map((input) => {
+        return translationHistory.map((input, index) => {
             let translation = [];
             for (let letter of input) {
                 let letterMapping = handSignMapping.find(
@@ -38,7 +38,12 @@ const Profile = ({ userLogin }) => {
                 );
                 translation.push(letterMapping);
             }
-            return <div>{handSignTranslation(translation)}</div>;
+            return (
+                <div>
+                    <div>{translationHistory[index]}</div>
+                    {handSignTranslation(translation)}
+                </div>
+            );
         });
     };
 
