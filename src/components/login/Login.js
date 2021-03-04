@@ -10,9 +10,13 @@ const Login = ({ userLogin }) => {
     };
 
     const handleLoginButton = () => {
-        userLogin(true);
-        localStorage.setItem("user", JSON.stringify({ name: name }));
-        history.push("/translation");
+        if (!name || name.replace(/\s/g, "").length === 0) {
+            alert("You must type in something...");
+        } else {
+            userLogin(true);
+            localStorage.setItem("user", JSON.stringify({ name: name }));
+            history.push("/translation");
+        }
     };
 
     return (
