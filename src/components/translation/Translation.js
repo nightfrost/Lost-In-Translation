@@ -1,31 +1,16 @@
-import { useEffect, useState } from "react";
-import MOCK_IMAGES from "../../mocks/images.mock";
+import { useState } from "react";
+import TranslationItem from "../shared/TranslationItem";
 
 const Translation = () => {
     const [userInput, setUserInput] = useState(null);
-    const [translatedUserInput, setTranslatedUserInput] = useState([]);
-    const [handSignMapping, setHandSignMapping] = useState();
-
-    useEffect(() => {
-        setHandSignMapping(MOCK_IMAGES);
-    }, []);
+    const [inputToBeTranslated, setInputToBeTranslated] = useState(null);
 
     const handleInputChange = (event) => {
         setUserInput(event.target.value.toLowerCase());
     };
 
-    const translate = () => {
-        const arr = userInput.split("");
-
-        let translation = [];
-        for (let letter of arr) {
-            let letterMapping = handSignMapping.find(
-                (element) => element.name === letter
-            );
-            translation.push(letterMapping);
-        }
-
-        setTranslatedUserInput(translation);
+    const handleTranslateButtonClick = () => {
+        setInputToBeTranslated(userInput);
         updateLocalStorageTranslations();
     };
 
@@ -51,10 +36,6 @@ const Translation = () => {
         );
     };
 
-    const handSignTranslation = translatedUserInput.map((sign, index) => {
-        return <img key={index} src={sign.url} alt="hand sign"></img>;
-    });
-
     return (
         <div className="content">
             <input
@@ -62,10 +43,17 @@ const Translation = () => {
                 placeholder="To be translated..."
                 onChange={handleInputChange}
             ></input>
-            <button className="btn btn-primary" type="button" onClick={translate}>
+            <button
+                className="btn btn-primary"
+                type="button"
+                onClick={handleTranslateButtonClick}
+            >
                 Translate
             </button>
-            <div>{handSignTranslation}</div>
+
+            {inputToBeTranslated && (
+                <TranslationItem inputToBeTranslated={inputToBeTranslated} />
+            )}
         </div>
     );
 };

@@ -1,15 +1,10 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
-import MOCK_IMAGES from "../../mocks/images.mock";
+import TranslationItem from "../shared/TranslationItem";
 
 const Profile = ({ userLogin }) => {
-    const [handSignMapping, setHandSignMapping] = useState();
     const [translationHistory, setTranslationHistory] = useState([]);
     const history = useHistory();
-
-    useEffect(() => {
-        setHandSignMapping(MOCK_IMAGES);
-    }, []);
 
     useEffect(() => {
         const user = localStorage.getItem("user");
@@ -29,28 +24,11 @@ const Profile = ({ userLogin }) => {
         history.push("/");
     };
 
-    const translate = () => {
-        return translationHistory.map((input, index) => {
-            let translation = [];
-            for (let letter of input) {
-                let letterMapping = handSignMapping.find(
-                    (element) => element.name === letter
-                );
-                translation.push(letterMapping);
-            }
-            return (
-                <div key={index}>
-                    <div>{translationHistory[index]}</div>
-                    {handSignTranslation(translation)}
-                </div>
-            );
-        });
+    const showTranslations = () => {
+        return translationHistory.map((input, index) => (
+            <TranslationItem key={index} inputToBeTranslated={input} />
+        ));
     };
-
-    const handSignTranslation = (input) =>
-        input.map((sign, index) => {
-            return <img key={index} src={sign.url} alt="hand sign"></img>;
-        });
 
     return (
         <div className="content">
@@ -59,10 +37,10 @@ const Profile = ({ userLogin }) => {
                 Clear and logout
             </button>
             {translationHistory.length > 0 ? (
-                translate()
+                showTranslations()
             ) : (
-                    <div>No translation history yet</div>
-                )}
+                <div>No translation history yet</div>
+            )}
         </div>
     );
 };
