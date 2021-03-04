@@ -12,6 +12,8 @@ const Translation = () => {
     const handleTranslateButtonClick = () => {
         if (userInput == null || userInput.replace(/\s/g, "").length === 0) {
             alert("You must type in something...");
+        } else if (/[^\w\s]/.test(userInput)) {
+            alert("You entered invalid characters...");
         } else {
             setInputToBeTranslated(userInput);
             updateLocalStorageTranslations();
