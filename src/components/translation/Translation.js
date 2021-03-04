@@ -56,13 +56,13 @@ const Translation = () => {
     });
 
     return (
-        <div>
+        <div className="content">
             <input
                 type="text"
                 placeholder="To be translated..."
                 onChange={handleInputChange}
             ></input>
-            <button type="button" onClick={translate}>
+            <button className="btn btn-primary" type="button" onClick={translate}>
                 Translate
             </button>
             <div>{handSignTranslation}</div>

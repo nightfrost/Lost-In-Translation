@@ -22,7 +22,7 @@ const Navbar = ({ isUserLoggedIn }) => {
         }
     };
 
-    return <div>This is the navbar {updateLinks()}</div>;
+    return <div className="navbar">This is the navbar {updateLinks()} </div>;
 };
 
 export default Navbar;

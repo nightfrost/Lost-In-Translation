@@ -53,16 +53,16 @@ const Profile = ({ userLogin }) => {
         });
 
     return (
-        <div>
-            This is the profile component
+        <div className="content">
+            <p>This is the profile component</p>
             <button type="button" onClick={clearStorage}>
                 Clear and logout
             </button>
             {translationHistory.length > 0 ? (
                 translate()
             ) : (
-                <div>No translation history yet</div>
-            )}
+                    <div>No translation history yet</div>
+                )}
         </div>
     );
 };
