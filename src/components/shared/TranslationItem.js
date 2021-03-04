@@ -25,7 +25,9 @@ const TranslationItem = ({ inputToBeTranslated }) => {
     }, [inputToBeTranslated, handSignMapping]);
 
     const handSignTranslation = translatedInput.map((sign, index) => {
-        return <img key={index} src={sign.url} alt="hand sign"></img>;
+        return sign.url ? (
+            <img key={index} src={sign.url} alt="hand sign"></img>
+        ) : null;
     });
 
     return (
