@@ -10,8 +10,12 @@ const Translation = () => {
     };
 
     const handleTranslateButtonClick = () => {
-        setInputToBeTranslated(userInput);
-        updateLocalStorageTranslations();
+        if (userInput == null || userInput.replace(/\s/g, "").length === 0) {
+            alert("You must type in something...");
+        } else {
+            setInputToBeTranslated(userInput);
+            updateLocalStorageTranslations();
+        }
     };
 
     const updateLocalStorageTranslations = () => {
