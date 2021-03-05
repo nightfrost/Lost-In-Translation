@@ -1,9 +1,11 @@
 import { useHistory } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { LoginContext } from "../context/LoginContext";
 import TranslationItem from "../shared/TranslationItem";
 
-const Profile = ({ userLogin }) => {
+const Profile = () => {
     const [translationHistory, setTranslationHistory] = useState([]);
+    const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
     const history = useHistory();
 
     useEffect(() => {
@@ -20,7 +22,7 @@ const Profile = ({ userLogin }) => {
 
     const clearStorage = () => {
         localStorage.clear();
-        userLogin(false);
+        setIsUserLoggedIn(!isUserLoggedIn);
         history.push("/");
     };
 

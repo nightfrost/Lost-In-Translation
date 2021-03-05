@@ -1,8 +1,11 @@
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LoginContext } from "../context/LoginContext";
 
-const Login = ({ userLogin }) => {
+const Login = () => {
     const [name, setName] = useState(null);
+    const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
+
     let history = useHistory();
 
     const handleInputChange = (event) => {
@@ -13,8 +16,8 @@ const Login = ({ userLogin }) => {
         if (!name || name.replace(/\s/g, "").length === 0) {
             alert("You must type in something...");
         } else {
-            userLogin(true);
             localStorage.setItem("user", JSON.stringify({ name: name }));
+            setIsUserLoggedIn(!isUserLoggedIn);
             history.push("/translation");
         }
     };

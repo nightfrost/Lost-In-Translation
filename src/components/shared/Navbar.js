@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { LoginContext } from "../context/LoginContext";
 
-const Navbar = ({ isUserLoggedIn }) => {
-    const user = localStorage.getItem("user");
+const Navbar = () => {
+    const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
+    const [name, setName] = useState();
+
+    useEffect(() => {
+        const user = localStorage.getItem("user");
+        if (user || isUserLoggedIn) {
+            setName(JSON.parse(user).name);
+            setIsUserLoggedIn(true);
+        }
+    }, [isUserLoggedIn, setIsUserLoggedIn]);
 
     const updateLinks = () => {
         if (isUserLoggedIn) {
@@ -10,7 +21,7 @@ const Navbar = ({ isUserLoggedIn }) => {
                     | Hello,
                     <span>
                         {" "}
-                        <Link to="/profile">{JSON.parse(user).name}</Link>
+                        <Link to="/profile">{name}</Link>
                     </span>{" "}
                     |
                     <span>
@@ -22,7 +33,7 @@ const Navbar = ({ isUserLoggedIn }) => {
         }
     };
 
-    return <div className="navbar">This is the navbar {updateLinks()} </div>;
+    return <div className="navbar">This is the navbar {updateLinks()}</div>;
 };
 
 export default Navbar;
