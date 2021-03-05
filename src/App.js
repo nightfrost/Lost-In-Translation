@@ -1,9 +1,9 @@
 import { BrowserRouter, Switch } from "react-router-dom";
 import { useState } from "react";
-import RouteController from "./components/router/RouteController";
-import Login from "./components/login/Login";
-import Translation from "./components/translation/Translation";
-import Profile from "./components/profile/Profile";
+import RouteController from "./components/routes/RouteController";
+import Login from "./components/routes/Login";
+import Translation from "./components/routes/Translation";
+import Profile from "./components/routes/Profile";
 import Navbar from "./components/shared/Navbar";
 
 const App = () => {
