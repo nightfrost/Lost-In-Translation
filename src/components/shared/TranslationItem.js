@@ -33,7 +33,12 @@ const TranslationItem = ({ inputToBeTranslated }) => {
     return (
         <div>
             <span>
-                {inputToBeTranslated} {handSignTranslation}
+                <div className="center">
+                    {inputToBeTranslated}
+                </div>
+                <div className="center">
+                    {handSignTranslation}
+                </div>
             </span>
         </div>
     );

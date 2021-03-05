@@ -23,7 +23,7 @@ const Login = () => {
     };
 
     return (
-        <div className="content">
+        <div className="content center">
             <input placeholder="Enter name" onChange={handleInputChange} />
             <button type="button" onClick={handleLoginButton}>
                 Login

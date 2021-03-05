@@ -43,7 +43,7 @@ const Translation = () => {
     };
 
     return (
-        <div className="content">
+        <div className="content center">
             <input
                 type="text"
                 placeholder="To be translated..."
@@ -56,10 +56,11 @@ const Translation = () => {
             >
                 Translate
             </button>
-
-            {inputToBeTranslated && (
-                <TranslationItem inputToBeTranslated={inputToBeTranslated} />
-            )}
+            <div className="blog-preview">
+                {inputToBeTranslated && (
+                    <TranslationItem inputToBeTranslated={inputToBeTranslated} />
+                )}
+            </div>
         </div>
     );
 };

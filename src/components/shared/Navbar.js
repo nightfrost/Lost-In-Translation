@@ -33,7 +33,7 @@ const Navbar = () => {
         }
     };
 
-    return <div className="navbar">This is the navbar {updateLinks()}</div>;
+    return <div className="navbar">Lost in translation app {updateLinks()}</div>;
 };
 
 export default Navbar;
