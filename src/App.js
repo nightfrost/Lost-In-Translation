@@ -18,7 +18,7 @@ const App = () => {
             <Navbar isUserLoggedIn={isUserLoggedIn} />
             <Switch>
                 <RouteController
-                    type="public"
+                    type="login"
                     exact
                     path="/"
                     children={<Login userLogin={(value) => update(value)} />}
