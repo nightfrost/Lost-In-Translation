@@ -13,7 +13,7 @@ const Login = () => {
     };
 
     const handleLoginButton = () => {
-        if (!name || name.replace(/\s/g, "").length === 0) {
+        if (!name || name.trim().length === 0) {
             alert("You must type in something...");
         } else {
             localStorage.setItem("user", JSON.stringify({ name: name }));
