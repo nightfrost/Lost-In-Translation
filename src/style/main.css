@@ -268,7 +268,6 @@ label {
 .translateInput {
     width: 400px;
     height: 80px;
-    
     font-size: 1.8em;
     background-color: transparent;
     border: none;
@@ -337,10 +336,19 @@ label {
   color: var(--color-secundary-100);
 }
 
+
 .logoutImg {
-    margin-left: 1em;
-    width: 32px;
-    height: 32px;
+    margin-left: 0.5em;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+
+.logoutImg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
 }
 
 /* modal */
@@ -379,10 +387,6 @@ label {
 
 .modalBtn:hover {
 cursor: pointer;
-}
-
-.modalMessage {
-
 }
 
 .displayBlock {
