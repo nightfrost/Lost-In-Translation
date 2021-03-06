@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginContext";
-import logo from "../../assets/images/Logo.png";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);

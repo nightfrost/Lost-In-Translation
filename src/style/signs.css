@@ -1,0 +1,186 @@
+:root {
+    --sprite-width: 150px;
+    --sprite-height: 150px;
+}
+
+.letter-a {
+    background: url("../assets/images/spritesheet.png");
+    background-position: 0px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-b {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -150px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-c {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -300px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-d {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -450px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-e {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -600px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-f {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -750px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-g {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -900px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-h {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -1050px 0px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-i {
+    background: url("../assets/images/spritesheet.png");
+    background-position: 0px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-j {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -150px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-k {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -300px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-l {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -450px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-m {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -600px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-n {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -750px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-o {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -900px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-p {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -1050px -150px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-q {
+    background: url("../assets/images/spritesheet.png");
+    background-position: 0px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-r {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -150px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-s {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -300px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-t {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -450px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-u {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -600px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-v {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -750px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-w {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -900px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-x {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -1050px -300px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-y {
+    background: url("../assets/images/spritesheet.png");
+    background-position: 0px -450px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}
+
+.letter-z {
+    background: url("../assets/images/spritesheet.png");
+    background-position: -150px -450px;
+    width: var(--sprite-width);
+    height: var(--sprite-height);
+}

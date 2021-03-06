@@ -43,7 +43,7 @@ const Login = () => {
                 onChange={handleInputChange}
                 id="input-a"
             />
-            <label htmlFor="input-a"> Enter your name! </label>
+            <label htmlFor="input-a">Enter your name!</label>
             <div className="container">
                 <button
                     className="btn"
