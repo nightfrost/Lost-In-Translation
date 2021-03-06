@@ -31,7 +31,7 @@ const TranslationItem = ({ inputToBeTranslated }) => {
     });
 
     return (
-        <div className="translationItemCard shadow">
+        <div className="translationItemCard shadowCard">
             <div className="cardText">{inputToBeTranslated}</div>
             <div className="cardSigns">{handSignTranslation}</div>
         </div>

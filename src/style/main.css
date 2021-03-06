@@ -2,12 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 :root {
-    --color-primary-100: #ffd524;
-    --color-primary-200: #ecb602;
-    --color-secundary-100: #55185d;
+    --color-primary-100: #FFD524;
+    --color-primary-200: #ECB602;
+    --color-secundary-100: #55185D;
     --color-secundary-200: #290849;
-    --color-neutral-500: #fffdf7;
-    --color-neutral-800: #cdc7d9;
+    --color-neutral-100: #FFFDF7;
+    --color-neutral-200:  #FFFAF0;
+    --color-neutral-600:  #C0C0C0;
     --ff-primary: "Lato", sans-serif;
     --ff-accent: "Oswald", sans-serif;
 }
@@ -24,6 +25,10 @@ h2,
 h3,
 p {
     margin: 0;
+}
+
+html {
+  background-color: var(--color-neutral-200);
 }
 
 /* navbar */
@@ -69,7 +74,7 @@ p {
     margin: 1em;
     padding: 1em;
     font-size: 1em;
-    border-left: 1px solid var(--color-neutral-500);
+    border-left: 1px solid var(--color-neutral-100);
     text-decoration: none;
     line-height: 1.75em;
 }
@@ -119,9 +124,9 @@ p {
 }
 
 .shadow {
-    -webkit-box-shadow: 0 10px 6px -6px var(--color-neutral-800);
-    -moz-box-shadow: 0 10px 6px -6px var(--color-neutral-800);
-    box-shadow: 0 10px 6px -6px var(--color-neutral-800);
+    -webkit-box-shadow: 0 10px 6px -6px var(--color-neutral-600);
+    -moz-box-shadow: 0 10px 6px -6px var(--color-neutral-600);
+    box-shadow: 0 10px 6px -6px var(--color-neutral-600);
 }
 
 /* login input */
@@ -186,7 +191,7 @@ label {
     outline: none;
     border: none;
     font-size: 28px;
-    color: var(--color-neutral-500);
+    color: var(--color-neutral-200);
     font-family: var(--ff-accent);
 }
 
@@ -234,9 +239,9 @@ label {
 /* translate image button */
 
 .imgBtn {
-    width: 5%;
-    height: 100%;
-    margin-left: 1em;
+    width: 32px;
+    height: 32px;
+    margin-left: 3em;
     overflow: hidden;
     transition-duration: 0.8s;
     transition-property: transform;
@@ -250,18 +255,20 @@ label {
 
 /* translate input */
 
-.translateInputWrapper {
+.translateWrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     max-width: 50%;
     margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .translateInput {
     width: 400px;
     height: 80px;
-    margin-top: 80px;
+    
     font-size: 1.8em;
     background-color: transparent;
     border: none;
@@ -288,16 +295,20 @@ label {
   font-family: var(--ff-primary);
   letter-spacing: 0.5em;
   border-radius: 25px;
-  background-color: var(--color-neutral-500);
+  background-color: var(--color-neutral-100);
 }
 
 .cardText {
-  opacity: 1;
   margin-bottom: 1em;
+  color: var(--color-secundary-100);
 }
 
 .cardSigns {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.shadowCard {
+  box-shadow: var(--color-neutral-600) 0px 7px 29px 0px;
 }

@@ -45,7 +45,7 @@ const Translation = () => {
 
     return (
         <div>
-            <div className="translateInputWrapper">
+            <div className="translateWrapper">
                 <input
                     className="translateInput"
                     type="text"
