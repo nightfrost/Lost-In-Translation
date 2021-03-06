@@ -259,7 +259,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 50%;
+    width: 450px;
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 80px;
