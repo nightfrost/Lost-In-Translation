@@ -312,3 +312,33 @@ label {
 .shadowCard {
   box-shadow: var(--color-neutral-600) 0px 7px 29px 0px;
 }
+
+/* profile */
+
+.profileText {
+  font-family: var(--ff-primary);
+  letter-spacing: 0.25em;
+  text-align: center;
+  margin: 5em;
+  color: var(--color-secundary-200);
+}
+
+.profileLogout {
+  font-family: var(--ff-primary);
+  letter-spacing: 0.1em;
+  text-align: right;
+  margin-top: 1em;
+  margin-right: 1em;
+  color: var(--color-secundary-200);
+}
+
+.profileLogout:hover {
+  cursor: pointer;
+  color: var(--color-secundary-100);
+}
+
+.logoutImg {
+    margin-left: 1em;
+    width: 32px;
+    height: 32px;
+}

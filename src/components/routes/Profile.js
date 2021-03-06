@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
 import TranslationItem from "../shared/TranslationItem";
+import logout from "../../assets/images/logout.png";
 
 const Profile = () => {
     const [translationHistory, setTranslationHistory] = useState([]);
@@ -33,15 +34,21 @@ const Profile = () => {
     };
 
     return (
-        <div className="content">
-            <p>This is the profile component</p>
-            <button type="button" onClick={clearStorage}>
-                Clear and logout
-            </button>
+        <div>
+            <div className="profile">
+                <div className="profileLogout" onClick={clearStorage}>
+                    Logout / clear your history{" "}
+                    <img className="logoutImg" src={logout} alt="logout" />
+                </div>
+                <div className="profileText">
+                    This is your profile page. You can find your latest
+                    translation history below.
+                </div>
+            </div>
             {translationHistory.length > 0 ? (
                 showTranslations()
             ) : (
-                <div>No translation history yet</div>
+                <div className="profileText">No translation history yet!</div>
             )}
         </div>
     );
