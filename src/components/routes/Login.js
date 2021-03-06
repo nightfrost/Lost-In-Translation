@@ -1,10 +1,14 @@
 import { useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
+import Modal from "../shared/Modal";
 
 const Login = () => {
     const [name, setName] = useState(null);
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
+
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState(null);
 
     let history = useHistory();
 
@@ -14,12 +18,21 @@ const Login = () => {
 
     const handleLoginButton = () => {
         if (!name || name.trim().length === 0) {
-            alert("You must type in something...");
+            openModal("You must type in something...");
         } else {
             localStorage.setItem("user", JSON.stringify({ name: name }));
             setIsUserLoggedIn(!isUserLoggedIn);
             history.push("/translation");
         }
+    };
+
+    const openModal = (message) => {
+        setModalMessage(message);
+        setShowModal(!showModal);
+    };
+
+    const closeModal = () => {
+        setShowModal(!showModal);
     };
 
     return (
@@ -30,7 +43,7 @@ const Login = () => {
                 onChange={handleInputChange}
                 id="input-a"
             />
-            <label for="input-a"> Enter your name! </label>
+            <label htmlFor="input-a"> Enter your name! </label>
             <div className="container">
                 <button
                     className="btn"
@@ -40,6 +53,7 @@ const Login = () => {
                     START
                 </button>
             </div>
+            <Modal show={showModal} close={closeModal} message={modalMessage} />
         </div>
     );
 };

@@ -1,10 +1,14 @@
 import { useState } from "react";
 import TranslationItem from "../shared/TranslationItem";
 import arrow from "../../assets/images/down-arrow.png";
+import Modal from "../shared/Modal";
 
 const Translation = () => {
     const [userInput, setUserInput] = useState(null);
     const [inputToBeTranslated, setInputToBeTranslated] = useState(null);
+
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState(null);
 
     const handleInputChange = (event) => {
         setUserInput(event.target.value.toLowerCase());
@@ -12,9 +16,9 @@ const Translation = () => {
 
     const handleTranslateButtonClick = () => {
         if (!userInput || userInput.trim().length === 0) {
-            alert("You must type in something...");
+            openModal("You must type in something...");
         } else if (/[^\w\s]/.test(userInput)) {
-            alert("You entered invalid characters...");
+            openModal("You entered invalid characters...");
         } else {
             setInputToBeTranslated(userInput);
             updateLocalStorageTranslations();
@@ -43,6 +47,15 @@ const Translation = () => {
         );
     };
 
+    const openModal = (message) => {
+        setModalMessage(message);
+        setShowModal(!showModal);
+    };
+
+    const closeModal = () => {
+        setShowModal(!showModal);
+    };
+
     return (
         <div>
             <div className="translateWrapper">
@@ -63,6 +76,8 @@ const Translation = () => {
             {inputToBeTranslated && (
                 <TranslationItem inputToBeTranslated={inputToBeTranslated} />
             )}
+
+            <Modal show={showModal} close={closeModal} message={modalMessage} />
         </div>
     );
 };
