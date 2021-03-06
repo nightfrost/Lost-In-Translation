@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginContext";
 import logo from "../../assets/images/Logo.png";
-import "../../style/navbar.css";
 
 const Navbar = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
@@ -35,7 +34,6 @@ const Navbar = () => {
                             {name}
                         </Link>
                     </div>
-
                     <div>
                         <Link
                             className={
