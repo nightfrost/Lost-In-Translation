@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginContext";
 import logo from "../../assets/images/Logo.png";
+import "../../style/navbar.css";
 
 const Navbar = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
@@ -53,9 +54,11 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar">
+        <div className="navbar shadow">
             <div className="navbrand">
-                <img className="logo" src={logo} alt="logo"></img>
+                <div className="logoSplash">
+                    <img className="logo" src={logo} alt="logo"></img>
+                </div>
                 <span className="text">Lost In Translation</span>
             </div>
             <div>{updateLinks()}</div>

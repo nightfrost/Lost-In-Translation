@@ -1,0 +1,97 @@
+.input {
+    width: 400px;
+    margin: 0 auto;
+    font-family: Lato;
+    font-size: 1.3em;
+    letter-spacing: 0.25em;
+    text-align: center;
+    font-family: var(--ff-accent);
+}
+
+input {
+    width: 400px;
+    height: 80px;
+    margin-top: 80px;
+    font-size: 1.8em;
+    background-color: transparent;
+    border: none;
+    border-top: 3px solid var(--color-primary-100);
+    border-bottom: 3px solid var(--color-primary-100);
+    outline: none;
+    color: var(--color-secundary-100);
+    padding-left: 10px;
+    text-align: center;
+    font-family: var(--ff-accent);
+    letter-spacing: 0.1em;
+}
+
+input:focus + label {
+    top: -130px;
+    font-size: 1.2em;
+    transition: all 0.3s;
+}
+
+label {
+    display: block;
+    position: relative;
+    left: 0px;
+    top: -70px;
+    font-size: 1.8em;
+    cursor: text;
+    color: var(--color-secundary-100);
+    transition: all 0.3s;
+}
+
+.btn {
+    position: relative;
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 28px;
+    color: var(--color-neutral-500);
+    font-family: var(--ff-accent);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn::after,
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 85%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+
+.btn::before {
+    background-color: var(--color-primary-100);
+    top: -1rem;
+    left: -2.5rem;
+}
+
+.btn::after {
+    background-color: var(--color-secundary-100);
+    top: 1rem;
+    left: 4rem;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+    top: 0;
+    transform: skewx(0deg);
+}
+
+.btn:hover::after {
+    left: -4.3rem;
+}
+
+.btn:hover::before {
+    left: 5.5rem;
+}

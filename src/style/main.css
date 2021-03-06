@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 :root {
-    --color-primary-100: #FFD500;
-    --color-primary-200: #FDC500;
-    --color-secundary-100: #00509D;
-    --color-secundary-200: #003F88;
-    --color-secundary-300: #00296B;
+    --color-primary-100: #ffd524;
+    --color-primary-200: #ecb602;
+    --color-secundary-100: #55185d;
+    --color-secundary-200: #290849;
     --color-neutral-500: #fffdf7;
+    --color-neutral-800: #cdc7d9;
     --ff-primary: "Lato", sans-serif;
     --ff-accent: "Oswald", sans-serif;
 }
@@ -15,7 +15,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
@@ -23,85 +23,5 @@ h1,
 h2,
 h3,
 p {
-  margin: 0;
-}
-
-.navbar {
-  font-family: var(--ff-accent);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--color-secundary-300);
-  background-color: var(--color-primary-100);
-  height: 8em;
-}
-
-.navbar .logo {
-  width: 8em;
-  height: auto;
-  padding: 1em;
-}
-
-.navbar .navbrand {
-  width: 25em;
-  display: flex;
-
-}
-
-.navbar .text {
-  font-size: 1.5em;
-  margin-left: 0.5em;
-  margin-bottom: 0.5em;
-  align-self: flex-end;
-}
-
-.navbar .navlinks {
-  display: flex;
-  flex-direction: column;
-  margin-right: 1em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  padding: 1em;
-  font-size: 1em;
-  border-left: 1px solid var(--color-neutral-500);
-  text-decoration: none;
-}
-
-.navbar .navlinks .link {
-  text-decoration: none;
-}
-
-.navbar .navlinks .link:visited {
-  color: var(--color-secundary-300);
-  text-decoration: none;
-}
-
-.currentLink {
-  color: var(--color-secundary-100);
-  text-decoration: none;
-}
-
-.navbar img:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
+    margin: 0;
 }
