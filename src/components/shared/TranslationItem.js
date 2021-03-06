@@ -31,10 +31,9 @@ const TranslationItem = ({ inputToBeTranslated }) => {
     });
 
     return (
-        <div>
-            <span>
-                {inputToBeTranslated} {handSignTranslation}
-            </span>
+        <div className="translationItemCard shadow">
+            <div className="cardText">{inputToBeTranslated}</div>
+            <div className="cardSigns">{handSignTranslation}</div>
         </div>
     );
 };

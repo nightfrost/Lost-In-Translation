@@ -274,3 +274,30 @@ label {
     font-family: var(--ff-accent);
     letter-spacing: 0.1em;
 }
+
+/* translation item card */
+
+.translationItemCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 2em;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-primary);
+  letter-spacing: 0.5em;
+  border-radius: 25px;
+  background-color: var(--color-neutral-500);
+}
+
+.cardText {
+  opacity: 1;
+  margin-bottom: 1em;
+}
+
+.cardSigns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
