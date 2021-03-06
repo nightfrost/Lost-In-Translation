@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TranslationItem from "../shared/TranslationItem";
-
+import arrow from "../../assets/images/down-arrow.png";
 const Translation = () => {
     const [userInput, setUserInput] = useState(null);
     const [inputToBeTranslated, setInputToBeTranslated] = useState(null);
@@ -43,19 +43,19 @@ const Translation = () => {
     };
 
     return (
-        <div className="content">
+        <div className="translateInputWrapper">
             <input
+                className="translateInput"
                 type="text"
                 placeholder="To be translated..."
                 onChange={handleInputChange}
             ></input>
-            <button
-                className="btn btn-primary"
-                type="button"
+            <img
+                className="imgBtn"
+                src={arrow}
                 onClick={handleTranslateButtonClick}
-            >
-                Translate
-            </button>
+                alt="translate"
+            ></img>
 
             {inputToBeTranslated && (
                 <TranslationItem inputToBeTranslated={inputToBeTranslated} />

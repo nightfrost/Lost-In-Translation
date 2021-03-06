@@ -21,7 +21,7 @@ const Navbar = () => {
     const updateLinks = () => {
         if (isUserLoggedIn) {
             return (
-                <div className="navlinks">
+                <div className="navLinks">
                     <div>
                         Hello,{" "}
                         <Link

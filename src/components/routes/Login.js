@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
-import "../../style/login.css";
 
 const Login = () => {
     const [name, setName] = useState(null);
@@ -24,8 +23,13 @@ const Login = () => {
     };
 
     return (
-        <div className="input">
-            <input type="text" onChange={handleInputChange} id="input-a" />
+        <div className="loginInputWrapper">
+            <input
+                className="loginInput"
+                type="text"
+                onChange={handleInputChange}
+                id="input-a"
+            />
             <label for="input-a"> Enter your name! </label>
             <div className="container">
                 <button
