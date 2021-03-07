@@ -324,18 +324,16 @@ label {
 
 .profileLogout {
   font-family: var(--ff-primary);
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   letter-spacing: 0.1em;
   text-align: right;
   margin-top: 1em;
   margin-right: 1em;
   color: var(--color-secundary-200);
 }
-
-.profileLogout:hover {
-  cursor: pointer;
-  color: var(--color-secundary-100);
-}
-
 
 .logoutImg {
     margin-left: 0.5em;
@@ -347,8 +345,7 @@ label {
 }
 
 .logoutImg:hover {
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
+  cursor: pointer;
 }
 
 /* modal */

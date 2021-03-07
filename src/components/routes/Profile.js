@@ -21,7 +21,7 @@ const Profile = () => {
         }
     }, []);
 
-    const clearStorage = () => {
+    const logout = () => {
         localStorage.clear();
         setIsUserLoggedIn(!isUserLoggedIn);
         history.push("/");
@@ -36,9 +36,14 @@ const Profile = () => {
     return (
         <div>
             <div className="profile">
-                <div className="profileLogout" onClick={clearStorage}>
+                <div className="profileLogout">
                     Logout / clear your history{" "}
-                    <img className="logoutImg" src={exit} alt="logout" />
+                    <img
+                        className="logoutImg"
+                        src={exit}
+                        alt="logout"
+                        onClick={logout}
+                    />
                 </div>
                 <div className="profileText">
                     This is your profile page. You can find your latest
