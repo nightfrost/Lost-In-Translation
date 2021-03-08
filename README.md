@@ -1,6 +1,6 @@
 # Lost in Translation app
 
-A front-end text- to sign language app, that allows the user to login and translate text to sign language.
+A front-end text to sign language app, that allows the user to login and translate text to sign language.
 
 ## Getting Started
 
@@ -10,6 +10,16 @@ To run the project locally:
 2. Install dependencies: `npm install`
 3. Run the server: `npm start`
 4. Navigate to localhost: [http://localhost:3000](http://localhost:3000)
+
+## Heroku
+
+The application is hosted at: https://lost-in-translation-dk.herokuapp.com/ <br>
+The Heroku dyno sleeps after 30 mins of inactivity, so your first visit might take longer while it starts up. [`create-react-app-buildpack`](https://elements.heroku.com/buildpacks/mars/create-react-app-buildpack) was used to deply the application.
+
+## Authors
+
+[Lucas Due](https://github.com/nightfrost) <br>
+[Nuno Cunha](https://github.com/iamnuno)
 
 ## Available Scripts
 
@@ -32,4 +42,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
