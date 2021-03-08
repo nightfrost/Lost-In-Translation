@@ -38,9 +38,9 @@ const Login = () => {
     };
 
     return (
-        <div className="loginInputWrapper">
+        <div className="login-input-wrapper">
             <input
-                className="loginInput"
+                className="login-input"
                 type="text"
                 onChange={handleInputChange}
                 id="input-a"

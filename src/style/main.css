@@ -56,7 +56,7 @@ html {
     margin: 1em;
 }
 
-.navbrand .logoSplash {
+.navbrand .logo-splash {
     background-image: url("../assets/images/splash.svg");
     background-size: 100% 100%;
 }
@@ -68,7 +68,7 @@ html {
     align-self: flex-end;
 }
 
-.navbar .navLinks {
+.navbar .nav-links {
     display: flex;
     flex-direction: column;
     margin: 1em;
@@ -79,16 +79,16 @@ html {
     line-height: 1.75em;
 }
 
-.navbar .navLinks .link {
+.navbar .nav-links .link {
     text-decoration: none;
 }
 
-.navbar .navLinks .link:visited {
+.navbar .nav-links .link:visited {
     color: var(--color-secundary-300);
     text-decoration: none;
 }
 
-.currentLink {
+.current-link {
     color: var(--color-secundary-100);
     text-decoration: none;
 }
@@ -131,7 +131,7 @@ html {
 
 /* login input */
 
-.loginInputWrapper {
+.login-input-wrapper {
     width: 400px;
     margin: 0 auto;
     font-family: Lato;
@@ -141,7 +141,7 @@ html {
     font-family: var(--ff-accent);
 }
 
-.loginInput {
+.login-input {
     width: 400px;
     height: 80px;
     margin-top: 80px;
@@ -158,7 +158,7 @@ html {
     letter-spacing: 0.1em;
 }
 
-.loginInput:focus + label {
+.login-input:focus + label {
     top: -130px;
     font-size: 1.2em;
     transition: all 0.3s;
@@ -238,7 +238,7 @@ label {
 
 /* translate image button */
 
-.imgBtn {
+.img-btn {
     width: 32px;
     height: 32px;
     margin-left: 3em;
@@ -247,7 +247,7 @@ label {
     transition-property: transform;
 }
 
-.imgBtn:hover {
+.img-btn:hover {
     cursor: pointer;
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
@@ -255,7 +255,7 @@ label {
 
 /* translate input */
 
-.translateWrapper {
+.translate-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -265,7 +265,7 @@ label {
     margin-bottom: 80px;
 }
 
-.translateInput {
+.translate-input {
     width: 400px;
     height: 80px;
     font-size: 1.8em;
@@ -283,7 +283,7 @@ label {
 
 /* translation item card */
 
-.translationItemCard {
+.translation-item-card {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -297,24 +297,24 @@ label {
     background-color: var(--color-neutral-100);
 }
 
-.cardText {
+.card-text {
     margin-bottom: 1em;
     color: var(--color-secundary-100);
 }
 
-.cardSigns {
+.card-signs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.shadowCard {
+.shadow-card {
     box-shadow: var(--color-neutral-600) 0px 7px 29px 0px;
 }
 
 /* profile */
 
-.profileText {
+.profile-text {
     font-family: var(--ff-primary);
     letter-spacing: 0.25em;
     text-align: center;
@@ -322,7 +322,7 @@ label {
     color: var(--color-secundary-200);
 }
 
-.profileLogout {
+.profile-logout {
     font-family: var(--ff-primary);
     height: 2em;
     display: flex;
@@ -335,7 +335,7 @@ label {
     color: var(--color-secundary-200);
 }
 
-.logoutImg {
+.logout-img {
     margin-left: 0.5em;
     width: 20px;
     height: 20px;
@@ -344,7 +344,7 @@ label {
     transition-property: transform;
 }
 
-.logoutImg:hover {
+.logout-img:hover {
     cursor: pointer;
 }
 
@@ -359,7 +359,7 @@ label {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.modalMain {
+.modal-main {
     position: fixed;
     background: var(--color-neutral-100);
     width: 80%;
@@ -369,7 +369,7 @@ label {
     border-radius: 10px;
 }
 
-.modalContent {
+.modal-content {
     text-align: center;
     color: var(--color-secundary-200) !important;
     font-family: var(--ff-primary) !important;
@@ -377,19 +377,19 @@ label {
     font-size: 1.3em !important;
 }
 
-.modalBtn {
+.modal-btn {
     width: 16px;
     height: 16px;
 }
 
-.modalBtn:hover {
+.modal-btn:hover {
     cursor: pointer;
 }
 
-.displayBlock {
+.display-block {
     display: block;
 }
 
-.displayNone {
+.display-none {
     display: none;
 }

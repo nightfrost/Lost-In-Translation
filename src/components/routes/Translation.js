@@ -61,15 +61,15 @@ const Translation = () => {
 
     return (
         <div>
-            <div className="translateWrapper">
+            <div className="translate-wrapper">
                 <input
-                    className="translateInput"
+                    className="translate-input"
                     type="text"
                     placeholder="To be translated..."
                     onChange={handleInputChange}
                 ></input>
                 <img
-                    className="imgBtn"
+                    className="img-btn"
                     src={arrow}
                     onClick={handleTranslateButtonClick}
                     alt="translate"

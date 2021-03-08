@@ -2,15 +2,15 @@ import exit from "../../assets/images/close.png";
 
 // Modal component is used to display alert messages
 const Modal = ({ message, show, close }) => {
-    const showHide = show ? "modal displayBlock" : "modal displayNone";
+    const showHide = show ? "modal display-block" : "modal display-none";
 
     return (
         <div className={showHide}>
-            <section className="modalMain">
-                <div className="modalContent">
-                    <div className="modalMessage">{message}</div>
+            <section className="modal-main">
+                <div className="modal-content">
+                    <div className="modal-message">{message}</div>
                     <img
-                        className="modalBtn"
+                        className="modal-btn"
                         src={exit}
                         alt="close"
                         onClick={close}

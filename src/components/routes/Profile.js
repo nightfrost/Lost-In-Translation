@@ -37,16 +37,16 @@ const Profile = () => {
     return (
         <div>
             <div className="profile">
-                <div className="profileLogout">
+                <div className="profile-logout">
                     Logout / clear your history{" "}
                     <img
-                        className="logoutImg"
+                        className="logout-img"
                         src={exit}
                         alt="logout"
                         onClick={logout}
                     />
                 </div>
-                <div className="profileText">
+                <div className="profile-text">
                     This is your profile page. You can find your latest
                     translation history below.
                 </div>
@@ -54,7 +54,7 @@ const Profile = () => {
             {translationHistory.length > 0 ? (
                 showTranslations()
             ) : (
-                <div className="profileText">No translation history yet!</div>
+                <div className="profile-text">No translation history yet!</div>
             )}
         </div>
     );

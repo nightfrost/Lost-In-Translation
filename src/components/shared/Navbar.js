@@ -21,13 +21,13 @@ const Navbar = () => {
     const updateLinks = () => {
         if (isUserLoggedIn) {
             return (
-                <div className="navLinks">
+                <div className="nav-links">
                     <div>
                         Hello,{" "}
                         <Link
                             className={
                                 location.pathname === "/profile"
-                                    ? "currentLink"
+                                    ? "current-link"
                                     : "link"
                             }
                             to="/profile"
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <Link
                             className={
                                 location.pathname === "/translation"
-                                    ? "currentLink"
+                                    ? "current-link"
                                     : "link"
                             }
                             to="/translation"
@@ -55,7 +55,7 @@ const Navbar = () => {
     return (
         <div className="navbar shadow">
             <div className="navbrand">
-                <div className="logoSplash">
+                <div className="logo-splash">
                     <img className="logo" src={logo} alt="logo"></img>
                 </div>
                 <span className="text">Lost In Translation</span>

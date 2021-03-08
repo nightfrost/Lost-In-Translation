@@ -9,9 +9,9 @@ const TranslationItem = ({ inputToBeTranslated }) => {
     );
 
     return (
-        <div className="translationItemCard shadowCard">
-            <div className="cardText">{inputToBeTranslated}</div>
-            <div className="cardSigns">{handSignTranslation}</div>
+        <div className="translation-item-card shadow-card">
+            <div className="card-text">{inputToBeTranslated}</div>
+            <div className="card-signs">{handSignTranslation}</div>
         </div>
     );
 };
