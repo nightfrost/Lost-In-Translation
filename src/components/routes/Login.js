@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
 import Modal from "../shared/Modal";
 
+// Login component works as home page if user is not logged in
 const Login = () => {
     const [name, setName] = useState(null);
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
@@ -20,6 +21,7 @@ const Login = () => {
         if (!name || name.trim().length === 0) {
             openModal("You must type in something...");
         } else {
+            // with JSON.stringify it's possible to use object for value instead of only one string
             localStorage.setItem("user", JSON.stringify({ name: name }));
             setIsUserLoggedIn(!isUserLoggedIn);
             history.push("/translation");

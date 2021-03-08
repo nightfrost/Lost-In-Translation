@@ -4,6 +4,7 @@ import { LoginContext } from "../context/LoginContext";
 import TranslationItem from "../shared/TranslationItem";
 import exit from "../../assets/images/close.png";
 
+// Profile component let's user see his latest 10 translations and logout/clear localStorage
 const Profile = () => {
     const [translationHistory, setTranslationHistory] = useState([]);
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);

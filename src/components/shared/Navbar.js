@@ -17,6 +17,7 @@ const Navbar = () => {
         }
     }, [isUserLoggedIn, setIsUserLoggedIn]);
 
+    // if user is logged in show additional links in navbar
     const updateLinks = () => {
         if (isUserLoggedIn) {
             return (

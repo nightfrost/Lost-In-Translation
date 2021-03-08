@@ -3,6 +3,8 @@ import TranslationItem from "../shared/TranslationItem";
 import arrow from "../../assets/images/down-arrow.png";
 import Modal from "../shared/Modal";
 
+// Translation component works as home page if user is already logged in
+// here user can make translations
 const Translation = () => {
     const [userInput, setUserInput] = useState(null);
     const [inputToBeTranslated, setInputToBeTranslated] = useState(null);
@@ -38,6 +40,7 @@ const Translation = () => {
         }
 
         translations.push(userInput);
+        // with JSON.stringify it's possible to use object for value instead of only one string
         localStorage.setItem(
             "user",
             JSON.stringify({

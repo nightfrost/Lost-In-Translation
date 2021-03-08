@@ -1,4 +1,6 @@
 import exit from "../../assets/images/close.png";
+
+// Modal component is used to display alert messages
 const Modal = ({ message, show, close }) => {
     const showHide = show ? "modal displayBlock" : "modal displayNone";
 
