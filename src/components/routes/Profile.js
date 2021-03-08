@@ -2,7 +2,9 @@ import { useHistory } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
 import TranslationItem from "../shared/TranslationItem";
+import exit from "../../assets/images/close.png";
 
+// Profile component let's user see his latest 10 translations and logout/clear localStorage
 const Profile = () => {
     const [translationHistory, setTranslationHistory] = useState([]);
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
@@ -20,7 +22,7 @@ const Profile = () => {
         }
     }, []);
 
-    const clearStorage = () => {
+    const logout = () => {
         localStorage.clear();
         setIsUserLoggedIn(!isUserLoggedIn);
         history.push("/");
@@ -33,16 +35,27 @@ const Profile = () => {
     };
 
     return (
-        <div className="content center">
-            <p>This is the profile component</p>
-            <button type="button" onClick={clearStorage}>
-                Clear and logout
-            </button>
+        <div>
+            <div className="profile">
+                <div className="profile-logout">
+                    Logout / clear your history{" "}
+                    <img
+                        className="logout-img"
+                        src={exit}
+                        alt="logout"
+                        onClick={logout}
+                    />
+                </div>
+                <div className="profile-text">
+                    This is your profile page. You can find your latest
+                    translation history below.
+                </div>
+            </div>
             {translationHistory.length > 0 ? (
                 showTranslations()
             ) : (
-                    <div>No translation history yet</div>
-                )}
+                <div className="profile-text">No translation history yet!</div>
+            )}
         </div>
     );
 };

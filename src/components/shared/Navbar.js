@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../context/LoginContext";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useContext(LoginContext);
     const [name, setName] = useState();
+
+    const location = useLocation();
 
     useEffect(() => {
         const user = localStorage.getItem("user");
@@ -14,26 +17,52 @@ const Navbar = () => {
         }
     }, [isUserLoggedIn, setIsUserLoggedIn]);
 
+    // if user is logged in show additional links in navbar
     const updateLinks = () => {
         if (isUserLoggedIn) {
             return (
-                <span>
-                    | Hello,
-                    <span>
-                        {" "}
-                        <Link to="/profile">{name}</Link>
-                    </span>{" "}
-                    |
-                    <span>
-                        {" "}
-                        <Link to="/translation">Translation</Link>
-                    </span>
-                </span>
+                <div className="nav-links">
+                    <div>
+                        Hello,{" "}
+                        <Link
+                            className={
+                                location.pathname === "/profile"
+                                    ? "current-link"
+                                    : "link"
+                            }
+                            to="/profile"
+                        >
+                            {name}
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            className={
+                                location.pathname === "/translation"
+                                    ? "current-link"
+                                    : "link"
+                            }
+                            to="/translation"
+                        >
+                            Translation
+                        </Link>
+                    </div>
+                </div>
             );
         }
     };
 
-    return <div className="navbar">Lost in translation app {updateLinks()}</div>;
+    return (
+        <div className="navbar shadow">
+            <div className="navbrand">
+                <div className="logo-splash">
+                    <img className="logo" src={logo} alt="logo"></img>
+                </div>
+                <span className="text">Lost In Translation</span>
+            </div>
+            <div>{updateLinks()}</div>
+        </div>
+    );
 };
 
 export default Navbar;

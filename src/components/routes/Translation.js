@@ -1,19 +1,26 @@
 import { useState } from "react";
 import TranslationItem from "../shared/TranslationItem";
+import arrow from "../../assets/images/down-arrow.png";
+import Modal from "../shared/Modal";
 
+// Translation component works as home page if user is already logged in
+// here user can make translations
 const Translation = () => {
     const [userInput, setUserInput] = useState(null);
     const [inputToBeTranslated, setInputToBeTranslated] = useState(null);
+
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState(null);
 
     const handleInputChange = (event) => {
         setUserInput(event.target.value.toLowerCase());
     };
 
     const handleTranslateButtonClick = () => {
-        if (userInput == null || userInput.replace(/\s/g, "").length === 0) {
-            alert("You must type in something...");
+        if (!userInput || userInput.trim().length === 0) {
+            openModal("You must type in something...");
         } else if (/[^\w\s]/.test(userInput)) {
-            alert("You entered invalid characters...");
+            openModal("You entered invalid characters...");
         } else {
             setInputToBeTranslated(userInput);
             updateLocalStorageTranslations();
@@ -33,6 +40,7 @@ const Translation = () => {
         }
 
         translations.push(userInput);
+        // with JSON.stringify it's possible to use object for value instead of only one string
         localStorage.setItem(
             "user",
             JSON.stringify({
@@ -42,25 +50,37 @@ const Translation = () => {
         );
     };
 
+    const openModal = (message) => {
+        setModalMessage(message);
+        setShowModal(!showModal);
+    };
+
+    const closeModal = () => {
+        setShowModal(!showModal);
+    };
+
     return (
-        <div className="content center">
-            <input
-                type="text"
-                placeholder="To be translated..."
-                onChange={handleInputChange}
-            ></input>
-            <button
-                className="btn btn-primary"
-                type="button"
-                onClick={handleTranslateButtonClick}
-            >
-                Translate
-            </button>
-            <div className="blog-preview">
-                {inputToBeTranslated && (
-                    <TranslationItem inputToBeTranslated={inputToBeTranslated} />
-                )}
+        <div>
+            <div className="translate-wrapper">
+                <input
+                    className="translate-input"
+                    type="text"
+                    placeholder="To be translated..."
+                    onChange={handleInputChange}
+                ></input>
+                <img
+                    className="img-btn"
+                    src={arrow}
+                    onClick={handleTranslateButtonClick}
+                    alt="translate"
+                ></img>
             </div>
+
+            {inputToBeTranslated && (
+                <TranslationItem inputToBeTranslated={inputToBeTranslated} />
+            )}
+
+            <Modal show={showModal} close={closeModal} message={modalMessage} />
         </div>
     );
 };
