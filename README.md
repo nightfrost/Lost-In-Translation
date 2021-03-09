@@ -1,6 +1,6 @@
 # Lost in Translation app
 
-A front-end text to sign language app, that allows the user to login and translate text to sign language.
+A front-end text to sign language app, built with ReactJS, that allows the user to login and translate text to sign language.
 
 ## Getting Started
 
